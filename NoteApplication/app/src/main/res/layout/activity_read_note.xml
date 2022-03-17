@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AddNoteActivity">
+    <!--button for saving and updating a note-->
+
+    <LinearLayout
+            android:id="@+id/linear_layout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+
+            android:orientation="horizontal">
+        <Button
+                android:id="@+id/back_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="10pt"
+                android:textAlignment="textStart"
+                android:layout_alignParentStart="true"
+                android:background="@android:color/transparent"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+        </Button>
+        <Button
+                android:id="@+id/edit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Edit"
+                android:textColor="@color/black"
+                android:textSize="10pt"
+                android:textAlignment="textEnd"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp">
+        </Button>
+    </LinearLayout>
+    <!--edit text for note title-->
+    <TextView
+            android:id="@+id/note_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear_layout_button"
+            android:background="@drawable/back"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Title..."
+            android:textSize="25sp"
+            android:padding="10dp"
+            android:textColor="@color/light_grey" android:layout_marginTop="10dp" android:layout_marginBottom="10dp"/>
+
+    <!--edit text for note description-->
+    <TextView
+            android:id="@+id/note_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/tag_list"
+            android:layout_below="@id/note_title"
+            android:background="@drawable/back"
+            android:gravity="start|top"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:textColor="@color/light_grey"
+            android:textSize="18dp"
+            android:hint="Detail..."
+            android:padding="10dp"
+            android:layout_margin="10dp"
+    />
+
+    <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tag_list"
+            android:layout_above="@+id/id_rmd_switch"
+            android:layout_marginHorizontal="10dp"
+            layout="@layout/tag_list"
+    />
+
+    <androidx.appcompat.widget.SwitchCompat
+
+            android:id="@+id/id_rmd_switch"
+            android:text="Reminder"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" android:layout_marginBottom="10dp"/>
+
+
+</RelativeLayout>
